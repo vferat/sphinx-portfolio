@@ -15,15 +15,20 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - name: Checkout repository
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
-      - uses: actions/setup-python@v6
+      - name: Setup Python
+        uses: actions/setup-python@v6
         with:
           python-version: 3.12
-      - run: sudo apt update && sudo apt install -y optipng
-      - uses: astral-sh/setup-uv@v7
-      - run: uv pip install --quiet --system .[doc]
+      - name: Install dependencies
+        run: sudo apt update && sudo apt install -y optipng
+      - name: Setup Uv
+        uses: astral-sh/setup-uv@v7
+      - name: Install project
+        run: uv pip install --quiet --system .[doc]
       - name: Build Sphinx
         run: |
           sphinx-build -b spelling source build -W --keep-going
