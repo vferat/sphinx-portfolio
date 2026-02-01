@@ -1,22 +1,51 @@
-name: Publish
-on:
+name: build
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.number }}-${{ github.event.ref }}
+  cancel-in-progress: true
+on:  # yamllint disable-line rule:truthy
+  pull_request:
   push:
-    branches:
-    - main
+    branches: [main]
+  workflow_dispatch:
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - id: build_and_commit
-      name: Build and commit
-      uses: sphinx-notes/pages@v3
-      with:
-        documentation_path: './source'
-        requirements_path: './requirements.txt'
-        publish: false
-    - name: Deploy 🚀
-      uses: JamesIves/github-pages-deploy-action@v4
-      with:
-        folder: ${{ steps.build_and_commit.outputs.artifact }}
-        clean-exclude: pr-preview
-        branch: gh-pages
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: 3.12
+      - run: sudo apt update && sudo apt install -y optipng
+      - uses: astral-sh/setup-uv@v7
+      - run: uv pip install --quiet --system .[doc]
+      - run: make html
+      - uses: actions/upload-artifact@v6
+        with:
+          name: build
+          path: ./build/html
+
+  deploy:
+    if: github.event_name == 'push'
+    needs: build
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/download-artifact@v7
+        with:
+          name: build
+          path: ./build
+      - uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: ./build
+          clean-exclude: pr-preview
+          branch: gh-pages
+          git-config-name: 'github-actions[bot]'
+          git-config-email: 'github-actions[bot]@users.noreply.github.com'
+          single-commit: true
+          force: true
