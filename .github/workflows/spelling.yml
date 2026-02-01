@@ -1,0 +1,29 @@
+name: spelling
+# https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#concurrency
+# https://docs.github.com/en/developers/webhooks-and-events/events/github-event-types#pullrequestevent
+# workflow name, PR number (empty on push), push ref (empty on PR)
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.number }}-${{ github.event.ref }}
+  cancel-in-progress: true
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: 3.12
+      - run: sudo apt update && sudo apt install -y optipng
+      - uses: astral-sh/setup-uv@v7
+      - run: uv pip install --quiet --system .[doc]
+      - name: Build Sphinx
+        run: |
+          sphinx-build -b spelling source build -W --keep-going

@@ -1,0 +1,22 @@
+name: Publish
+on:
+  push:
+    branches:
+    - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - id: build_and_commit
+      name: Build and commit
+      uses: sphinx-notes/pages@v3
+      with:
+        documentation_path: './source'
+        requirements_path: './requirements.txt'
+        publish: false
+    - name: Deploy 🚀
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        folder: ${{ steps.build_and_commit.outputs.artifact }}
+        clean-exclude: pr-preview
+        branch: gh-pages
