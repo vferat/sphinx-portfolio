@@ -1,46 +1,30 @@
-name: build
-concurrency:
-  group: ${{ github.workflow }}-${{ github.event.number }}-${{ github.event.ref }}
-  cancel-in-progress: true
-on:  # yamllint disable-line rule:truthy
-  pull_request:
+name: Publish
+on:
   push:
-    branches: [main]
-  workflow_dispatch:
-
+    branches:
+    - main
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - name: Checkout repository
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
-      - uses: actions/setup-python@v6
+      - name: Setup Python
+        uses: actions/setup-python@v6
         with:
           python-version: 3.12
-      - run: sudo apt update && sudo apt install -y optipng
-      - uses: astral-sh/setup-uv@v7
-      - run: uv pip install --quiet --system .[doc]
-      - run: make html
-      - uses: actions/upload-artifact@v6
-        with:
-          name: build
-          path: ./build/html
-
-  deploy:
-    if: github.event_name == 'push'
-    needs: build
-    timeout-minutes: 10
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
-      - uses: actions/checkout@v6
-      - uses: actions/download-artifact@v7
-        with:
-          name: build
-          path: ./build
-      - uses: JamesIves/github-pages-deploy-action@v4
+      - name: Install dependencies
+        run: sudo apt update && sudo apt install -y optipng
+      - name: Setup Uv
+        uses: astral-sh/setup-uv@v7
+      - name: Install project
+        run: uv pip install --quiet --system .[doc]
+      - name: Build Sphinx documentation
+        run: make html
+      - name:  Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: ./build
           clean-exclude: pr-preview
