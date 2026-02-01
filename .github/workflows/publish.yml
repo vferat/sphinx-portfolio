@@ -26,7 +26,7 @@ jobs:
       - name:  Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: ./build
+          folder: ./build/html
           clean-exclude: pr-preview
           branch: gh-pages
           git-config-name: 'github-actions[bot]'
