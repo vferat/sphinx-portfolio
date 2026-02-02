@@ -16,4 +16,5 @@ I am Kim Kitsuragi is a lieutenant of the RCM and deuteragonist in Disco Elysium
 :hidden:
 about
 publications
+syntax
 ```
