@@ -82,6 +82,7 @@ html_show_sourcelink = False
 # -- Sidebar Options for HTML output -----------------------------------------
 html_sidebars = {'index': ['sidebar.html'],
                  'about': ['sidebar.html'],
+                 'syntax': ['sidebar.html'],
                  'publications': ['sidebar.html']}
 
 # -- Bibliography ------------------------------------------------------------
