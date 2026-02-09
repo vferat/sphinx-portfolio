@@ -17,5 +17,4 @@ To know more about the syntax of this website, please check the {doc}`/syntax`
 :hidden:
 about
 publications
-syntax
 ```
