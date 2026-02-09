@@ -1,4 +1,3 @@
-
 ---
 orphan: true
 ---
@@ -53,6 +52,7 @@ You can use the `:name:` variable to link to figure:
 ``````
 link to the figure {ref}`my-figure`
 
+
 ## Mathematics
 ``````restructuredtext
 ```{math}
@@ -68,12 +68,12 @@ z=\sqrt{x^2+y^2}
 z=\sqrt{x^2+y^2}
 ```
 
-
 You can use the `label` variable to link to equation:
 ``````restructuredtext
 {eq}`eq-label`
 ``````
 link to the equation {eq}`eq-label`
+
 
 ## Notes
 ````
@@ -85,6 +85,7 @@ A note
 ```{note}
 A note
 ```
+
 
 ## References and bibliographies
 
@@ -111,6 +112,7 @@ To insert a bibliography on the page use
 
 ```{footbibliography}
 ```
+
 
 ## Custom
 
