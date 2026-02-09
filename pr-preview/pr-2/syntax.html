@@ -7,11 +7,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="sphinx portfolio: a template website to build a portfolio with Sphinx." lang="en" name="description" xml:lang="en" />
-<meta content="python, Portfolio, sphinx, github, pages" name="keywords" />
-<meta content="en_US" property="og:locale" />
 
-    <title>Welcome to sphinx portfolio ! &#8212; Kim Kitsuragi</title>
+    <title>Syntax &#8212; Kim Kitsuragi</title>
   
   
   
@@ -56,13 +53,14 @@
     <script src="_static/togglebutton.js?v=1ae7504c"></script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
-    <link rel="canonical" href="https://vferat.github.io/index.html" />
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'syntax';</script>
+    <link rel="canonical" href="https://vferat.github.io/syntax.html" />
     <link rel="icon" href="_static/favicon.ico"/>
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="About Me" href="about.html" />
+    <link rel="prev" title="Publications" href="publications.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -120,7 +118,7 @@
     
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="index.html">
   
   
   
@@ -155,8 +153,8 @@
 </li>
 
 
-<li class="nav-item ">
-  <a class="nav-link nav-internal" href="syntax.html">
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
     Syntax
   </a>
 </li>
@@ -237,6 +235,10 @@
   
 
   
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
 </div>
 
     </header>
@@ -246,8 +248,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
@@ -279,8 +279,8 @@
 </li>
 
 
-<li class="nav-item ">
-  <a class="nav-link nav-internal" href="syntax.html">
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
     Syntax
   </a>
 </li>
@@ -393,7 +393,31 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article d-print-none"></div>
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Syntax</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
               
               
 
@@ -402,12 +426,115 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="welcome-to-sphinx-portfolio">
-<h1>Welcome to sphinx portfolio !<a class="headerlink" href="#welcome-to-sphinx-portfolio" title="Link to this heading">#</a></h1>
-<p>I am Kim Kitsuragi is a lieutenant of the RCM and deuteragonist in Disco Elysium.</p>
-<div class="toctree-wrapper compound">
+  <section id="syntax">
+<h1>Syntax<a class="headerlink" href="#syntax" title="Link to this heading">#</a></h1>
+<p>Here is a brief overview of syntax that can be use to populate this website.</p>
+<p>Please check the <a class="reference external" href="https://www.markdownguide.org/basic-syntax/">markdown guide</a>
+to learn the basic syntax.</p>
+<p>Additional features are listed below.</p>
+<section id="figures">
+<h2>Figures<a class="headerlink" href="#figures" title="Link to this heading">#</a></h2>
+<div class="highlight-restructuredtext notranslate"><div class="highlight"><pre><span></span><span class="gh">```{figure} _static/images/image_01.png</span>
+<span class="gh">---</span>
+width: 60%
+alt: My figure text
+<span class="gh">name: my_figure</span>
+<span class="gh">---</span>
+<span class="gh">And here is my figure caption.</span>
+<span class="gh">```</span>
+</pre></div>
+</div>
+<figure class="align-default" id="my-figure">
+<a class="reference internal image-reference" href="_images/image_01.png"><img alt="My figure alternative text" src="_images/image_01.png" style="width: 60%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">And here is my figure caption.</span><a class="headerlink" href="#my-figure" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>You can use the <code class="docutils literal notranslate"><span class="pre">:name:</span></code> variable to link to figure:</p>
+<div class="highlight-restructuredtext notranslate"><div class="highlight"><pre><span></span>{ref}<span class="nv">`my-figure`</span>
+</pre></div>
+</div>
+<p>link to the figure <a class="reference internal" href="#my-figure"><span class="std std-ref">And here is my figure caption.</span></a></p>
+</section>
+<section id="mathematics">
+<h2>Mathematics<a class="headerlink" href="#mathematics" title="Link to this heading">#</a></h2>
+<div class="highlight-restructuredtext notranslate"><div class="highlight"><pre><span></span><span class="s">```{math}</span>
+<span class="s">:label: eq-label</span>
+
+<span class="s">z=\sqrt{x^2+y^2}</span>
+<span class="s">```</span>
+</pre></div>
+</div>
+<div class="math notranslate nohighlight" id="equation-eq-label">
+<span class="eqno">(1)<a class="headerlink" href="#equation-eq-label" title="Link to this equation">#</a></span>\[z=\sqrt{x^2+y^2}\]</div>
+<p>You can use the <code class="docutils literal notranslate"><span class="pre">label</span></code> variable to link to equation:</p>
+<div class="highlight-restructuredtext notranslate"><div class="highlight"><pre><span></span>{eq}<span class="nv">`eq-label`</span>
+</pre></div>
+</div>
+<p>link to the equation <a class="reference internal" href="#equation-eq-label">(1)</a></p>
+</section>
+<section id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Link to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{note}
+A note
+```
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A note</p>
 </div>
 </section>
+<section id="references-and-bibliographies">
+<h2>References and bibliographies<a class="headerlink" href="#references-and-bibliographies" title="Link to this heading">#</a></h2>
+<section id="references">
+<h3>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h3>
+<p>The extension <code class="docutils literal notranslate"><span class="pre">sphinxcontrib-bibtex</span></code> allows to manage the bibliography of this site.
+To cite an article, add the reference in bibtex format to the <code class="docutils literal notranslate"><span class="pre">bibliography.bib</span></code> file and
+refer to the citation using the bibtex keyword:</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>{footcite}`ardhana2023imagined`
+</pre></div>
+</div>
+<p>Will be rendered as <a class="footnote-reference brackets" href="#footcite-ardhana2023imagined" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
+</section>
+<section id="bibliography">
+<h3>Bibliography<a class="headerlink" href="#bibliography" title="Link to this heading">#</a></h3>
+<p>To insert a bibliography on the page use</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>```{footbibliography}
+```
+</pre></div>
+</div>
+<div class="docutils container" id="id2">
+</div>
+</section>
+</section>
+<section id="custom">
+<h2>Custom<a class="headerlink" href="#custom" title="Link to this heading">#</a></h2>
+<p>You can add HTML content directly in your <code class="docutils literal notranslate"><span class="pre">markdown</span></code> files:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">data-testid</span><span class="o">=</span><span class="s">&quot;embed-iframe&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;border-radius:12px&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://open.spotify.com/embed/track/3TOCzZr8KJzPEmenbBLGT5?utm_source=generator&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;152&quot;</span> <span class="na">frameBorder</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">allowfullscreen</span><span class="o">=</span><span class="s">&quot;&quot;</span> <span class="na">allow</span><span class="o">=</span><span class="s">&quot;autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture&quot;</span> <span class="na">loading</span><span class="o">=</span><span class="s">&quot;lazy&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/3TOCzZr8KJzPEmenbBLGT5?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+</section>
+<section id="toggle-content-with-buttons">
+<h2>Toggle content with buttons<a class="headerlink" href="#toggle-content-with-buttons" title="Link to this heading">#</a></h2>
+<p>The extension <code class="docutils literal notranslate"><span class="pre">sphinx_togglebutton</span></code> allows to add content in toggle frames.</p>
+<div class="highlight-restructuredtext notranslate"><div class="highlight"><pre><span></span><span class="s">```{image} https://media1.tenor.com/m/ELIEPKi7qIYAAAAd/disco-elysium-rave.gif</span>
+<span class="s">:class: toggle</span>
+<span class="s">```</span>
+</pre></div>
+</div>
+<img alt="https://media1.tenor.com/m/ELIEPKi7qIYAAAAd/disco-elysium-rave.gif" class="toggle" src="https://media1.tenor.com/m/ELIEPKi7qIYAAAAd/disco-elysium-rave.gif" />
+</section>
+</section>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="footcite-ardhana2023imagined" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Marcelino Yeremia Ardhana. An imagined world of moralist: a description of adventure game disco elysium (2019). 2023.</p>
+</aside>
+</aside>
 
 
                 </article>
@@ -421,6 +548,33 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#figures">Figures</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematics">Mathematics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notes">Notes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references-and-bibliographies">References and bibliographies</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliography">Bibliography</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#custom">Custom</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toggle-content-with-buttons">Toggle content with buttons</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
