@@ -12,16 +12,15 @@ to learn the basic ``markdown`` syntax.
 More details on the website configuration can be found on the [pydata-sphinx-theme](https://pydata-sphinx-theme.readthedocs.io/en/stable/) website
 and the  [sphinx-design](https://sphinx-design.readthedocs.io/en/pydata-theme/index.html) website.
 
-- Grids: https://sphinx-design.readthedocs.io/en/pydata-theme/grids.html
-- Cards: https://sphinx-design.readthedocs.io/en/pydata-theme/cards.html
-- Dropdowns: https://sphinx-design.readthedocs.io/en/pydata-theme/dropdowns.html
-- Tabs: https://sphinx-design.readthedocs.io/en/pydata-theme/tabs.html
-- Badges: https://sphinx-design.readthedocs.io/en/pydata-theme/tabs.html
-- Buttons: https://sphinx-design.readthedocs.io/en/pydata-theme/tabs.html
-- Icons: https://sphinx-design.readthedocs.io/en/pydata-theme/tabs.html
-- Code blocks: https://pydata-sphinx-theme.readthedocs.io/en/stable/user_guide/theme-elements.html#code-blocks
-- Inline code: https://pydata-sphinx-theme.readthedocs.io/en/stable/user_guide/theme-elements.html#code-blocks
-- Admonition sidebars: https://pydata-sphinx-theme.readthedocs.io/en/stable/user_guide/theme-elements.html#admonition-sidebars
+- Grids: [https://sphinx-design.readthedocs.io/en/pydata-theme/grids.html](https://sphinx-design.readthedocs.io/en/pydata-theme/grids.html)
+- Cards: [https://sphinx-design.readthedocs.io/en/pydata-theme/cards.html](https://sphinx-design.readthedocs.io/en/pydata-theme/cards.html)
+- Dropdowns: [https://sphinx-design.readthedocs.io/en/pydata-theme/dropdowns.html](https://sphinx-design.readthedocs.io/en/pydata-theme/dropdowns.html)
+- Tabs: [https://sphinx-design.readthedocs.io/en/pydata-theme/tabs.html](https://sphinx-design.readthedocs.io/en/pydata-theme/tabs.html)
+- Badges: [https://sphinx-design.readthedocs.io/en/pydata-theme/tabs.html](https://sphinx-design.readthedocs.io/en/pydata-theme/tabs.html)
+- Buttons: [https://sphinx-design.readthedocs.io/en/pydata-theme/tabs.html]([https://sphinx-design.readthedocs.io/en/pydata-theme/tabs.html)
+- Icons: [https://sphinx-design.readthedocs.io/en/pydata-theme/tabs.html](https://sphinx-design.readthedocs.io/en/pydata-theme/tabs.html)
+- Code blocks: [https://pydata-sphinx-theme.readthedocs.io/en/stable/user_guide/theme-elements.html#code-blocks](https://pydata-sphinx-theme.readthedocs.io/en/stable/user_guide/theme-elements.html#code-blocks)
+- Admonition sidebars: [https://pydata-sphinx-theme.readthedocs.io/en/stable/user_guide/theme-elements.html#admonition-sidebars](https://pydata-sphinx-theme.readthedocs.io/en/stable/user_guide/theme-elements.html#admonition-sidebars)
 
 
 ## Figures
